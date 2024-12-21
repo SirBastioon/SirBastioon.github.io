@@ -20,9 +20,9 @@ function SectionWorks() {
   return (
     <section 
       id="works" 
-      className="min-h-screen py-20 bg-white px-6 lg:px-16"
+      className="min-h-screen bg-gray-50 py-20 px-6 lg:px-16" // Hintergrundfarbe sehr helles Grau
     >
-      <h2 className="text-4xl font-bold mb-8">Works</h2>
+      <h2 className="text-4xl font-bold mb-8">GitHub Contributions und ein Extra</h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, idx) => (
           <div key={idx} className="overflow-hidden rounded-lg shadow-lg group">

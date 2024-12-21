@@ -1,9 +1,11 @@
 import React from 'react';
 import Header from './components/Header';
 import SectionHero from './components/SectionHero';
-import SectionWorks from './components/SectionWorks';
 import SectionCompany from './components/SectionCompany';
+import SectionProjects from './components/SectionProjects';
+import SectionWorks from './components/SectionWorks';
 import SectionContact from './components/SectionContact';
+import AirQuality from './components/AirQuality'; // Importiere die neue Komponente
 import Footer from './components/Footer';
 
 function App() {
@@ -12,8 +14,10 @@ function App() {
       <Header />
       <main>
         <SectionHero />
-        <SectionWorks />
         <SectionCompany />
+        <SectionProjects />
+        <SectionWorks />
+        <AirQuality /> {/* Füge die neue Komponente hier ein */}
         <SectionContact />
       </main>
       <Footer />
