@@ -1,25 +1,21 @@
-import React from 'react';
-
-
+import React, { useEffect, useState } from 'react';
+import { fetchRepositories } from '../fetchRepositories';
 
 function SectionWorks() {
-  const projects = [
-    {
-      title: "Project One",
-      description: "A unique exploration of color and form.",
-      image: "/src/assets/images/work1.jpg"
-    },
-    {
-      title: "Project Two",
-      description: "Merging geometry and interaction.",
-      image: "/src/assets/images/work2.jpg"
-    },
-    {
-      title: "Project Three",
-      description: "A visual narrative evolving over time.",
-      image: "/src/assets/images/work3.jpg"
-    },
-  ];
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    async function getRepositories() {
+      try {
+        const repos = await fetchRepositories('SirBastioon');
+        setProjects(repos);
+      } catch (error) {
+        console.error('Error fetching repositories:', error);
+      }
+    }
+
+    getRepositories();
+  }, []);
 
   return (
     <section 
@@ -30,10 +26,11 @@ function SectionWorks() {
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, idx) => (
           <div key={idx} className="overflow-hidden rounded-lg shadow-lg group">
-            <img src={project.image} alt={project.title} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"/>
+            <img src={project.owner.avatar_url} alt={project.name} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"/>
             <div className="p-4">
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+              <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
               <p className="text-gray-600">{project.description}</p>
+              <a href={project.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">View Repository</a>
             </div>
           </div>
         ))}

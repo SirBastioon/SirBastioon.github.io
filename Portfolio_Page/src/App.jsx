@@ -6,7 +6,6 @@ import SectionCompany from './components/SectionCompany';
 import SectionContact from './components/SectionContact';
 import Footer from './components/Footer';
 
-
 function App() {
   return (
     <div className="bg-gray-50 text-black font-sans overflow-x-hidden">
@@ -20,6 +19,6 @@ function App() {
       <Footer />
     </div>
   );
-} 
+}
 
 export default App;
