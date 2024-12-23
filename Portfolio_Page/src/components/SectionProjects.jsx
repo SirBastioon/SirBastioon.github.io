@@ -1,6 +1,13 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 function SectionProjects() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   const projects = [
     {
       title: "Zeit Management Tool",
@@ -27,17 +34,28 @@ function SectionProjects() {
   return (
     <section 
       id="projects" 
-      className="min-h-screen bg-white py-8 px-6 lg:px-16 flex flex-col justify-center" // Hintergrundfarbe weiß
+      className="min-h-screen bg-white py-8 px-6 lg:px-16 flex flex-col justify-center"
+      ref={ref}
     >
       <h2 className="text-4xl font-bold mb-8">Projekthighlights</h2>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <motion.div 
+        className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
         {projects.map((project, idx) => (
-          <div key={idx} className="overflow-hidden rounded-lg shadow-lg p-4 bg-white">
+          <motion.div 
+            key={idx} 
+            className="overflow-hidden rounded-lg shadow-lg p-4 bg-white"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
             <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
             <p className="text-gray-600">{project.description}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
