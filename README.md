@@ -45,10 +45,10 @@ Portfolio_Page/
   ├── package.json
   ├── tailwind.config.js
   └── [README.md](http://_vscodecontentref_/0)
-
-  ##GitHub Pages
-  I don't know if github pages will work for you as when I ran npm run deploy on my device the path length was too long.
-  Maybe when cloning it into a shorter path it will work. Sorry for that, I wasn't able to fix it.
+  
+## GitHub Pages
+I don't know if github pages will work for you as when I ran npm run deploy on my device the path length was too long.
+Maybe when cloning it into a shorter path it will work. Sorry for that, I wasn't able to fix it.
 
 
 ## License
