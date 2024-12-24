@@ -26,7 +26,7 @@ Welcome to my personal portfolio website! This project showcases my work experie
 
 ## Installation
 1. Clone the repository: git clone https://github.com/SirBastioon/portfolio-page.git
-2. Navigate to the project folder: cd portfolio-page
+2. Navigate to the project folder: cd portfolio_page
 3. Install dependencies: npm install
 4. Run Development Server: npm run dev
 
@@ -45,6 +45,10 @@ Portfolio_Page/
   ├── package.json
   ├── tailwind.config.js
   └── [README.md](http://_vscodecontentref_/0)
+
+  ##GitHub Pages
+  I don't know if github pages will work for you as when I ran npm run deploy on my device the path length was too long.
+  Maybe when cloning it into a shorter path it will work. Sorry for that, I wasn't able to fix it.
 
 
 ## License
